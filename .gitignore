@@ -3,33 +3,60 @@ backend/node_modules
 frontend/node_modules
 
 # logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+backend/npm-debug.log*
+backend/nyarn-debug.log*
+backend/nyarn-error.log*
+
+frontend/npm-debug.log*
+frontend/nyarn-debug.log*
+frontend/nyarn-error.log*
+
 
 # runtime data
-pids
-*.pid
-*.seed
-*.log
-*.csv
-*.dat
-*.out
-*.pid
-*.gz
+backend/pids
+backend/*.pid
+backend/*.seed
+backend/*.log
+backend/*.csv
+backend/*.dat
+backend/*.out
+backend/*.pid
+backend/*.gz
+
+frontend/pids
+frontend/*.pid
+frontend/*.seed
+frontend/*.log
+frontend/*.csv
+frontend/*.dat
+frontend/*.out
+frontend/*.pid
+frontend*.gz
 
 # directories
-.cache
-.nyc_output
-coverage
-build/
+backend/.cache
+backend/.nyc_output
+backend/coverage
+backend/build/
+
+frontend/.cache
+frontend/.nyc_output
+frontend/coverage
+frontend/build/
 
 # files
-.DS_Store
-.env
-.env.test
-.env.production
-.eslintcache
+backend/..DS_Store
+backend/..env
+backend/..env.test
+backend/..env.production
+backend/..eslintcache
+
+frontend/..DS_Store
+frontend/..env
+frontend/..env.test
+frontend/..env.production
+frontend/..eslintcache
+
 
 # IDE - editors
 .idea
