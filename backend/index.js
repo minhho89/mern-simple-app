@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require("body-parser");
 const uuid = require("uuid");
+const cors = require('cors');
 
 const app = express();
 
@@ -8,6 +9,7 @@ const DUMMY_PRODUCTS = [];
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+app.use(cors({ origin: 'http://localhost:3000'}));
 
 
 app.get('/products', (req, res, next) => {
@@ -31,7 +33,6 @@ app.post('/product', (req, res, next) => {
     res.status(201).json({message: 'Created new product.', product: createdProduct});
 
 });
-
 
 app.listen(5002, () => {
     console.log('Server started on port 5002');
