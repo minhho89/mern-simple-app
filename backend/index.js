@@ -12,10 +12,10 @@ app.use(bodyParser.json());
 app.use(cors({ origin: 'http://localhost:3000'}));
 
 
-app.get('/products', (req, res, next) => {
+app.get('/products', (req, res) => {
     res.status(200).json({products: DUMMY_PRODUCTS});
 });
-app.post('/product', (req, res, next) => {
+app.post('/product', (req, res) => {
     const {title, price} = req.body;
 
     if (!title || title.trim().length === 0 || !price || price <= 0) {
