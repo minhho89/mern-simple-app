@@ -8,9 +8,13 @@ const InputCard = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        await API.saveProduct({ title, price });
-        setTitle('');
-        setPrice('');
+        try {
+            await API.saveProduct({title, price});
+            setTitle('');
+            setPrice('');
+        } catch (error) {
+            alert(error);
+        }
     }
 
     return (

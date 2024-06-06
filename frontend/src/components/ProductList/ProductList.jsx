@@ -7,7 +7,15 @@ const ProductList = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        API.getProducts().then(data => setProducts(data));
+        const fetchProducts = async () => {
+            try {
+                const data = await API.getProducts();
+                setProducts(data);
+            } catch (error) {
+                alert(error);
+            }
+        };
+        fetchProducts()
     },[]);
 
     return (
