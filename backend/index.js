@@ -4,6 +4,7 @@ const uuid = require("uuid");
 const cors = require('cors');
 
 const app = express();
+require('dotenv').config();
 
 const DUMMY_PRODUCTS = [];
 
@@ -34,6 +35,7 @@ app.post('/product', (req, res) => {
 
 });
 
-app.listen(5002, () => {
-    console.log('Server started on port 5002');
+const port = process.env.PORT || 5002;
+app.listen(port, () => {
+    console.log(`Server started on port ${port}`);
 });
